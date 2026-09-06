@@ -1,0 +1,53 @@
+services:
+  - type: web
+    name: asasa-gold-trading
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    dockerContext: .
+    healthCheckPath: /up
+    autoDeployTrigger: commit
+    envVars:
+      - key: APP_NAME
+        value: Asasa
+      - key: APP_ENV
+        value: production
+      - key: APP_DEBUG
+        value: "false"
+      - key: LOG_CHANNEL
+        value: stderr
+      - key: RENDER_APP_KEY
+        generateValue: true
+      - key: DB_CONNECTION
+        value: pgsql
+      - key: DB_URL
+        fromDatabase:
+          name: asasa-postgres
+          property: connectionString
+      - key: CACHE_STORE
+        value: database
+      - key: SESSION_DRIVER
+        value: database
+      - key: QUEUE_CONNECTION
+        value: sync
+      - key: TRADING_PRICE_MODE
+        value: live
+      - key: TRADING_PRICE_CACHE_TTL
+        value: "300"
+      - key: TRADING_QUOTE_TTL
+        value: "75"
+      - key: TRADING_BUY_MARKUP
+        value: "1.10"
+      - key: TRADING_SELL_MULTIPLIER
+        value: "0.90"
+      - key: TRADING_BUY_GUARDRAIL_PKR
+        value: "45000"
+
+databases:
+  - name: asasa-postgres
+    databaseName: asasa
+    user: asasa
+    plan: free
+    region: singapore
+    ipAllowList: []

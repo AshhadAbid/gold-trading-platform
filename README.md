@@ -1,6 +1,14 @@
-# Aurum gold trading demo
+# Asasa gold trading demo
 
 A deployable, single-user gold trading experience built with Laravel, React, and PostgreSQL. It shows a trusted live 24K price in PKR per gram, lets a customer enter PKR or grams, locks a quote for 75 seconds, settles a buy or sale atomically, updates all balances, and issues a receipt.
+
+## Deploy to Render
+
+The repository includes `render.yaml`, which creates the application and a private managed PostgreSQL database. Connect this GitHub repository as a Render Blueprint and approve the two resources:
+
+[Deploy on Render](https://render.com/deploy?repo=https://github.com/AshhadAbid/gold-trading-platform)
+
+Render generates the Laravel encryption secret, injects the internal PostgreSQL connection string, runs migrations and the idempotent demo seed, and deploys every new commit from `main`.
 
 ## Run locally
 

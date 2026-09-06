@@ -1,8 +1,8 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "aurum/trading-api",
+    "name": "asasa/trading-api",
     "type": "project",
-    "description": "Laravel API for the Aurum gold trading demo.",
+    "description": "Laravel API for the Asasa gold trading demo.",
     "keywords": ["laravel", "gold", "trading"],
     "license": "MIT",
     "require": {
