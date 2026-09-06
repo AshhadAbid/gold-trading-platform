@@ -2,6 +2,10 @@
 
 A deployable, single-user gold trading experience built with Laravel, React, and PostgreSQL. It shows a trusted live 24K price in PKR per gram, lets a customer enter PKR or grams, locks a quote for 75 seconds, settles a buy or sale atomically, updates all balances, and issues a receipt.
 
+## Build record
+
+The complete sanitized Codex session used to build, test, publish, and deploy this project is available in [BUILD_RECORD.md](BUILD_RECORD.md). It retains implementation decisions, verification steps, failed approaches, and deployment work while redacting credentials and local paths.
+
 ## Deploy to Render
 
 The repository includes `render.yaml`, which creates the application and a private managed PostgreSQL database. Connect this GitHub repository as a Render Blueprint and approve the two resources:
