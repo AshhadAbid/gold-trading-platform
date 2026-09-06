@@ -1,0 +1,41 @@
+services:
+  api:
+    build: ./backend
+    environment:
+      APP_ENV: production
+      APP_DEBUG: "false"
+      APP_KEY: ${APP_KEY:?Set APP_KEY to a generated Laravel application key}
+      DB_CONNECTION: pgsql
+      DB_HOST: postgres
+      DB_PORT: 5432
+      DB_DATABASE: gold_trading
+      DB_USERNAME: postgres
+      DB_PASSWORD: postgres
+      FRONTEND_URL: http://localhost:5173
+      TRADING_PRICE_MODE: ${TRADING_PRICE_MODE:-live}
+    ports: ["8000:8000"]
+    depends_on:
+      postgres:
+        condition: service_healthy
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        VITE_API_URL: http://localhost:8000/api/v1
+    ports: ["5173:80"]
+    depends_on: [api]
+  postgres:
+    image: postgres:17-alpine
+    environment:
+      POSTGRES_DB: gold_trading
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports: ["5432:5432"]
+    volumes: [gold-data:/var/lib/postgresql/data]
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d gold_trading"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+volumes:
+  gold-data:
