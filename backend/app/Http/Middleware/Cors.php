@@ -16,10 +16,10 @@ final class Cors
             $response = $next($request);
         }
 
-        return $response->withHeaders([
-            'Access-Control-Allow-Origin' => config('app.frontend_url', 'http://localhost:5173'),
-            'Access-Control-Allow-Methods' => 'GET, POST, OPTIONS',
-            'Access-Control-Allow-Headers' => 'Content-Type, Accept, Idempotency-Key',
-        ]);
+        $response->headers->set('Access-Control-Allow-Origin', config('app.frontend_url', 'http://localhost:5173'));
+        $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+        $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Accept, Idempotency-Key');
+
+        return $response;
     }
 }
