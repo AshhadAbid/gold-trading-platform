@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "scripts": {"dev": "vite", "build": "vite build", "lint": "eslint ."},
-  "dependencies": {"@vitejs/plugin-react": "latest", "vite": "latest", "typescript": "latest", "react": "latest", "react-dom": "latest", "lucide-react": "latest"},
-  "devDependencies": {"eslint": "latest", "@eslint/js": "latest", "eslint-plugin-react-hooks": "latest", "eslint-plugin-react-refresh": "latest", "globals": "latest"}
+  "scripts": {"dev": "vite", "build": "vite build"},
+  "dependencies": {"react": "latest", "react-dom": "latest", "lucide-react": "latest"},
+  "devDependencies": {"@vitejs/plugin-react": "latest", "vite": "latest"}
 }
