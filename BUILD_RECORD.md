@@ -318,19 +318,6 @@ The staged content is safe, but this repository has no Git remote configured. I�
 
 ---
 
-## Codex — 2026-09-06 21:28:11 UTC
-
-The project is committed locally:
-
-- Commit: `7ec2e65`
-- Message: `Build trusted gold trading experience`
-- `backend/.env` was safely excluded because it contains an application key and local settings.
-- `backend/.env.example` was committed instead.
-
-There is no Git remote configured, and GitHub CLI is unavailable. What Git repository URL should I push to?
-
----
-
 ## User — 2026-09-06 21:33:06 UTC
 
 https://github.com/AshhadAbid/gold-trading-platform.git
@@ -488,7 +475,7 @@ Your concurrent edits are consistent with a rename to “Asasa,” and the asses
 
 ## User — 2026-09-06 21:50:49 UTC
 
-okay restart this process change name from aurum to asasa and deploye it
+okay restart this process change name from aurum to asasa and deploy it
 
 ---
 
@@ -705,34 +692,6 @@ The implementation matches the two assessment screenshots.
 | Public GitHub repository | Done |
 | Public deployed product | Done through Cloudflare tunnel |
 | Build-record link | Still needed from you |
-
-Send this email:
-
-**Subject:** Founding Engineer Practical Assessment — Asasa Gold Trading
-
-```text
-Hi,
-
-Please find my completed Founding Engineer practical assessment below.
-
-1. Public GitHub repository
-https://github.com/AshhadAbid/gold-trading-platform
-
-2. Public deployed product
-https://cornwall-fun-bonds-ambient.trycloudflare.com
-
-No reviewer credentials are required.
-
-3. Build record
-[PASTE YOUR SHARED CODEX TRANSCRIPT OR SCREEN-RECORDING LINK HERE]
-
-The application uses Laravel, React, and PostgreSQL. It includes live PakGold pricing with GoldPrice.org fallback, five-minute server caching, 75-second locked quotes, atomic settlement, inventory and balance validation, idempotent confirmation, receipts, and responsive mobile support.
-
-Setup instructions, assumptions, engineering decisions, and known constraints are included in README.md and WhatIDid.md.
-
-Regards,
-Ashhad Abid
-```
 
 Do not email or commit `backend/.env`.
 
