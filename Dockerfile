@@ -21,4 +21,4 @@ RUN mv public/index.html public/app.html \
     && composer run-script post-autoload-dump \
     && chmod -R 775 storage bootstrap/cache
 EXPOSE 10000
-CMD ["sh", "-c", "export APP_KEY=base64:${RENDER_APP_KEY}; php artisan migrate --seed --force; php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
+CMD ["sh", "-c", "php artisan migrate --seed --force && php artisan serve --host=0.0.0.0 --port=${PORT:-10000}"]
